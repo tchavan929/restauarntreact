@@ -36,18 +36,21 @@ const Restaurant = ({restaurant }:RestProps) => {
   //const imgd = new IMG()
 // console.log(homepageimg)
     return (
-      <div>
-         <div>
-       {/* <td> {restaurant.restaurant_id}</td>   */}
-       <td><img  src={`../images/${restaurant.restaurant_id}.png`}  alt="Home Page Alt image " width="100px" height="100px" className='img-custom-size'/></td>
-       <td className='restaurantname'>{restaurant.restaurant_name}</td>
-        {/* img  src={restaurant.restaurant_url}  alt="Home Page Alt image "/> */}
-        
-        <td><button onClick={buttonHandler} name={restaurant.restaurant_id} className="orderbutton">Order here</button></td>
+      <div className="card restaurant-card">
+      <div className="card-body">
+        <div className="row">
+          <div className="col-md-3">
+            <img src={`../images/${restaurant.restaurant_id}.png`} alt="Restaurant image" className="img-fluid restaurant-image" />
+          </div>
+          <div className="col-md-6">
+            <h5 className="card-title restaurant-name">{restaurant.restaurant_name}</h5>
+          </div>
+          <div className="col-md-3 d-flex justify-content-end align-items-center">
+            <button onClick={buttonHandler} name={restaurant.restaurant_id} className="btn btn-warning order-button">Order here</button>
+          </div>
+        </div>
       </div>
-      {/* <img  src="https://i.pinimg.com/564x/98/bf/03/98bf03d37e5fb4960c538a2922f40f13.jpg"  alt="Home Page Alt image "/> */}
-      {/* <button onClick={buttonHandler} name={restaurant.restaurant_id}>Order here</button> */}
-      </div>
+    </div>
     )
   
 }

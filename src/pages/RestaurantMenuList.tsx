@@ -3,8 +3,7 @@ import React, { useState, useEffect }  from 'react'
 import { useParams } from 'react-router-dom';
 import RestaurantMenu from '../components//RestaurantMenu';
 import Search from '../components/Search';
-import CartContext from '../context/CartContext ';
-import { commerce } from '../lib/Commerce';
+import MycartComponemt from '../components/mycart';
 
 type Props = {};
 type RestaurantMenuType = {
@@ -19,6 +18,7 @@ type RestaurantMenuType = {
   
 
 }
+
 const RestaurantMenuList = (props: Props) => {
   const params = useParams();
   const [search, setSearch] = useState('');
@@ -64,7 +64,7 @@ const RestaurantMenuList = (props: Props) => {
      }, []);
   return (
     <div>
-       {/* <CartContext.Provider value={{cart, setCart, addProductToCart}}> */}
+    <div>
       <Search filterTasks={filterGrocery} />
       {restaurantmenu.filter((t) => t.name.toLowerCase().includes(search.toLowerCase())).map((r) => (
         <RestaurantMenu restaurantmenu={{
@@ -76,7 +76,11 @@ const RestaurantMenuList = (props: Props) => {
     desc:r.desc
   }}/>
       ))}
-      {/* </CartContext.Provider> */}
+
+    </div>
+    <div>
+   <MycartComponemt ></MycartComponemt> 
+    </div>
     </div>
   )
 }

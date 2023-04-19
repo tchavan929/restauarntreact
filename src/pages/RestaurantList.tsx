@@ -77,7 +77,7 @@ useEffect(() => {
   }, []);
     return(
      
-      <div className='restaurantlistdiv'>
+       <div className='restaurantlistdiv'>
         <table className='restaurntTable'>
           
             
