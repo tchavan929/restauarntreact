@@ -19,7 +19,7 @@ const UserProfile= ()=> {
     const sendGetRequest = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:4000/fetchedUserDetails/${loggedemail}`
+          `https://restaurantserverwindow.azurewebsites.net/fetchedUserDetails/${loggedemail}`
         );
         setFormData(response.data);
         console.log(response);
@@ -52,7 +52,7 @@ const UserProfile= ()=> {
     console.log(data)
           try {
             const response = await axios.post(
-              'http://localhost:4000/updateUser',
+              'https://restaurantserverwindow.azurewebsites.net/updateUser',
               data,
               config
             );

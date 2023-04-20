@@ -37,7 +37,7 @@ const RestaurantMenuList = (props: Props) => {
   }*/
     try {
       const response = await axios.get(
-        `http://localhost:4000/fetchRestaurantMenu/${params.id}`
+        `https://restaurantserverwindow.azurewebsites.net/fetchRestaurantMenu/${params.id}`
       );
       setRestaurantmenu(response.data);
       console.log(response);
